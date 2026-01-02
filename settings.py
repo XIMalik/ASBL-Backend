@@ -12,9 +12,9 @@ DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-8wvzjpg=o5rs%nkc+%zwnn$pm0z__p@3v)_u(&ak38@g-50b%1')
 
-ALLOWED_HOSTS = ["*.railway.app", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["*.railway.app", "localhost", "127.0.0.1", ".render.com"]
 
-CSRF_TRUSTED_ORIGINS = ["https://*.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://*.railway.app", 'https://*.render.com']
 
 # Application definition
 

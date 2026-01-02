@@ -1,0 +1,23 @@
+databases:
+  - name: asbl_db
+    databaseName: asbl_db
+    user: asbl_admin
+    password: N9QoVlYbHMkqrsbbF09NFXtM4TgbgGh6
+
+services:
+  - type: web
+    name: asbl-backend
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn asbl_backend.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: asbl-backend-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: DEBUG
+        value: False
