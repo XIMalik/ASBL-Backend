@@ -75,9 +75,7 @@ class DocumentUploadView(APIView):
         filename = f"applications/{uuid.uuid4()}{ext}"
 
         path = default_storage.save(filename, ContentFile(file.read()))
-        file_url = request.build_absolute_uri(
-            default_storage.url(path)
-        )
+        file_url = default_storage.url(path)
 
         return Response(
             {'url': file_url},
