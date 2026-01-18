@@ -17,9 +17,9 @@ DEBUG = True
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-8wvzjpg=o5rs%nkc+%zwnn$pm0z__p@3v)_u(&ak38@g-50b%1')
 
-ALLOWED_HOSTS = ["*.railway.app", "localhost", "127.0.0.1", "asbl-be.render.com", "asbl-be.onrender.com", ".onrender.com"]
+ALLOWED_HOSTS = ["*.railway.app", "localhost", "127.0.0.1", "asbl-be.render.com", "asbl-be.onrender.com", ".onrender.com", "msbe.netlify.app"]
 
-CSRF_TRUSTED_ORIGINS = ["https://*.railway.app", 'https://asbl-be.render.com']
+CSRF_TRUSTED_ORIGINS = ["https://*.railway.app", 'https://asbl-be.render.com', 'msbe.netlify.app']
 
 # Application definition
 
@@ -194,6 +194,7 @@ SPECTACULAR_SETTINGS = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:8080",
+    "https://msbe.netlify.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
