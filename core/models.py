@@ -42,6 +42,26 @@ class Program(models.Model):
     students = models.IntegerField(default=0)
     key_topics = ArrayField(models.TextField(), blank=True, default=list)
     additional_details = models.TextField(blank=True, null=True)
+    
+    # New fields
+    certificate_available = models.BooleanField(default=False)
+    certificate_description = models.TextField(blank=True, null=True)
+    total_reviews = models.IntegerField(default=0)
+    instructor_name = models.CharField(max_length=200, blank=True, null=True)
+    instructor_bio = models.TextField(blank=True, null=True)
+    instructor_image_url = models.URLField(max_length=500, blank=True, null=True)
+    thumbnail_url = models.URLField(max_length=500, blank=True, null=True)
+    video_intro_url = models.URLField(max_length=500, blank=True, null=True)
+    tagline = models.CharField(max_length=200, blank=True, null=True)
+    is_featured = models.BooleanField(default=False)
+    start_date = models.DateField(blank=True, null=True)
+    end_date = models.DateField(blank=True, null=True)
+    schedule = models.TextField(blank=True, null=True)
+    price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    image_urls = ArrayField(models.URLField(max_length=500), blank=True, default=list)
+    learning_outcomes = ArrayField(models.TextField(), blank=True, default=list)
+    learning_approach = models.TextField(blank=True, null=True)
+    
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

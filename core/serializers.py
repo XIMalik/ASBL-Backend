@@ -13,7 +13,12 @@ class ProgramSerializer(serializers.ModelSerializer):
     class Meta:
         model = Program
         fields = ['id', 'name', 'description', 'duration', 'level', 'category', 
-                 'students', 'key_topics', 'additional_details', 'created_at', 'updated_at']
+                 'students', 'key_topics', 'additional_details', 'certificate_available',
+                 'certificate_description', 'total_reviews', 'instructor_name', 'instructor_bio',
+                 'instructor_image_url', 'thumbnail_url', 'video_intro_url', 'tagline',
+                 'is_featured', 'start_date', 'end_date', 'schedule', 'price',
+                 'image_urls', 'learning_outcomes', 'learning_approach',
+                 'created_at', 'updated_at']
         read_only_fields = ['id', 'created_at', 'updated_at']
 
 
