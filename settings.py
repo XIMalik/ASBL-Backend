@@ -19,7 +19,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-8wvzjpg=o5rs%nkc+%zwn
 
 ALLOWED_HOSTS = ["*.railway.app", "localhost", "127.0.0.1", "asbl-be.render.com", "asbl-be.onrender.com", ".onrender.com", "msbe.netlify.app"]
 
-CSRF_TRUSTED_ORIGINS = ["https://*.railway.app", 'https://asbl-be.render.com', 'msbe.netlify.app']
+CSRF_TRUSTED_ORIGINS = ["https://*.railway.app", 'https://asbl-be.render.com', 'https://msbe.netlify.app']
 
 # Application definition
 
