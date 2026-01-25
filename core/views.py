@@ -1,6 +1,7 @@
 from rest_framework import viewsets, permissions
 from rest_framework.decorators import action
-from rest_framework.response import Response, status
+from rest_framework.response import Response
+from rest_framework import status
 from drf_spectacular.utils import extend_schema, extend_schema_view, OpenApiParameter
 from drf_spectacular.types import OpenApiTypes
 from rest_framework.views import APIView
