@@ -92,8 +92,8 @@ WSGI_APPLICATION = 'wsgi.application'
 #         'PASSWORD': os.getenv('DB_PASSWORD'),
 #         'HOST': os.getenv('DB_HOST'),
 #         'PORT': os.getenv('DB_PORT'),
-#     }
-# }
+#     }}
+
 
 # db setup for render/railway deployment
 

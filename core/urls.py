@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import ProfileViewSet, ProgramViewSet, PersonViewSet, ProgramPersonViewSet, NewsViewSet
+from .views import ProfileViewSet, ProgramViewSet, PersonViewSet, ProgramPersonViewSet, NewsViewSet, HealthCheck
 from .auth_views import login, register
 
 router = DefaultRouter()
@@ -14,4 +14,5 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api/auth/login/', login, name='login'),
     path('api/auth/register/', register, name='register'),
+    path('api/health-check/', HealthCheck.as_view(), name='health-check'),
 ]

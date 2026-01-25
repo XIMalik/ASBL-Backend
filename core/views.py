@@ -1,8 +1,9 @@
 from rest_framework import viewsets, permissions
 from rest_framework.decorators import action
-from rest_framework.response import Response
+from rest_framework.response import Response, status
 from drf_spectacular.utils import extend_schema, extend_schema_view, OpenApiParameter
 from drf_spectacular.types import OpenApiTypes
+from rest_framework.views import APIView
 from .models import Profile, Program, Person, ProgramPerson, News
 from .serializers import (ProfileSerializer, ProgramSerializer, PersonSerializer, 
                          ProgramPersonSerializer, NewsSerializer)
@@ -221,3 +222,16 @@ class NewsViewSet(viewsets.ModelViewSet):
         featured_news = News.objects.filter(featured=True).order_by('-published_at')
         serializer = self.get_serializer(featured_news, many=True)
         return Response(serializer.data)
+
+class HealthCheck(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    @extend_schema(
+        summary="Health Check",
+        description="Check if the API is running.",
+        responses={200: OpenApiTypes.STR},
+        tags=["Health"]
+    )
+
+    def get(self, request):
+        return Response("Running.", status=status.HTTP_200_OK)
