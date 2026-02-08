@@ -17,9 +17,9 @@ DEBUG = True
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-8wvzjpg=o5rs%nkc+%zwnn$pm0z__p@3v)_u(&ak38@g-50b%1')
 
-ALLOWED_HOSTS = ["*.railway.app", "localhost", "127.0.0.1", "asbl-be.render.com", "asbl-be.onrender.com", ".onrender.com", "msbe-one.netlify.app", "localhost:8080", "localhost:3000"]
+ALLOWED_HOSTS = ["*.railway.app", "localhost", "127.0.0.1", "asbl-be.render.com", "asbl-be.onrender.com", ".onrender.com", "msbe-one.netlify.app", "localhost:8080", "localhost:3000", "msbe.com.ng"]
 
-CSRF_TRUSTED_ORIGINS = ["https://*.railway.app", 'https://asbl-be.render.com', 'https://msbe-one.netlify.app', 'http://localhost:8080', 'http://localhost:3000']
+CSRF_TRUSTED_ORIGINS = ["https://*.railway.app", 'https://asbl-be.render.com', 'https://msbe-one.netlify.app', 'http://localhost:8080', 'http://localhost:3000', "https://msbe.com.ng"]
 
 # Application definition
 
@@ -84,25 +84,25 @@ WSGI_APPLICATION = 'wsgi.application'
 
 # comment out when deploying to git for render/railway
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.getenv('DB_NAME'),
-#         'USER': os.getenv('DB_USER'),
-#         'PASSWORD': os.getenv('DB_PASSWORD'),
-#         'HOST': os.getenv('DB_HOST'),
-#         'PORT': os.getenv('DB_PORT'),
-#     }}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
+    }}
 
 # db setup for render/railway deployment
 
-DATABASES = {
-    "default": dj_database_url.config(
-        default=os.environ.get("DATABASE_URL"),
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
-}
+# DATABASES = {
+#     "default": dj_database_url.config(
+#         default=os.environ.get("DATABASE_URL"),
+#         conn_max_age=600,
+#         conn_health_checks=True,
+#     )
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -195,6 +195,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8080",
     "https://msbe-one.netlify.app",
     "http://localhost:3000",
+    "https://msbe.com.ng",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
